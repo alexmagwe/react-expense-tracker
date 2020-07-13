@@ -1,38 +1,155 @@
 .App {
-  text-align: center;
+    padding: 1em 4em;
+    background-color: rgb(35, 163, 255);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 1em 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container {
+    width: 50%;
+    margin: auto;
+    border: 1px inset silver;
+    padding: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.balance-amount {
+    font-size: 28px;
+    ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+    margin: 1em 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.balance {
+    margin-bottom: 1em;
+}
+
+.income-expenses-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.income-expenses-container>div {
+    /* border: 1px solid silver; */
+    width: 50%;
+    text-align: center;
+    padding: 0.5em;
+    margin: 2px;
+    box-shadow: 0 2px 2px 1px rgb(169, 156, 156)
+}
+
+.income-expenses-container h4 {
+    font-size: 24px;
+}
+
+.income-container h4 {
+    color: green;
+}
+
+.expenses-container h4 {
+    color: crimson;
+}
+
+.income-expenses-container h5 {
+    margin: 4px;
+}
+
+.transaction-list {
+    padding: 2px;
+    overflow-y: scroll;
+    max-height: 12em;
+}
+
+.transaction-item {
+    border: 0.5px solid silver;
+    padding: 4px;
+    font-size: 1em;
+    height: auto;
+    position: relative;
+    margin: 0.5em;
+    box-shadow: 0 1px 1px rgb(169, 154, 154)
+}
+
+.item-price {
+    float: right;
+    margin-right: 1.5em;
+    width: auto;
+    font-size: 1em;
+    text-align: center;
+}
+
+.negative {
+    color: crimson
+}
+
+.positive {
+    color: green
+}
+
+.add-button {
+    width: 100%;
+    background-color: rgba(33, 71, 241, 0.417);
+    color: #111;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-out;
+}
+
+.add-button:hover {
+    background-color: transparent;
+    border-color: silver;
+    cursor: pointer;
+}
+
+.new-item-form input {
+    display: block;
+    padding: 10px;
+    margin: 1em 0;
+    width: 100%;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.transaction-item:hover .delete-btn {
+    visibility: visible;
+}
+
+@media screen and (max-width:600px) {
+    .container {
+        width: 100%;
+    }
+    .transaction-item {
+        height: 4em;
+    }
+    .delete-btn {
+        visibility: visible;
+    }
 }
