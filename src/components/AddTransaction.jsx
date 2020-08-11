@@ -8,7 +8,8 @@ export const AddTransaction = () => {
     const onSubmit=(e)=>{
         e.preventDefault();
         let newtransaction={id:Math.floor(Math.random()*100000000000),description:item,price:+price}
-        if (item!=='' && newtransaction.price>0){
+        if (newtransaction.item!=='' && Number.isInteger(parseInt(newtransaction.price))&&parseInt(newtransaction.price)!==0){
+        console.log(price,item)
         addNewTransaction(newtransaction)}
 	 setItem('')
 	 setPrice('')
@@ -21,7 +22,7 @@ export const AddTransaction = () => {
     <label htmlFor='item'>Description</label>
     <input id='item' type='text' value={item} onChange={e=>setItem(e.target.value)} />       
     <label htmlFor='price'>Amount</label>
-    <input id='price' type='text' value={price} onChange={e=>setPrice(e.target.value)}/>
+    <input id='price' type='text' value={price} placeholder='for expenses use negative values'onChange={e=>setPrice(e.target.value)}/>
     <button className='add-button' type='submit'>Add transaction</button>
        </form> </div>
     )
