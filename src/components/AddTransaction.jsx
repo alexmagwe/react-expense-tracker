@@ -8,7 +8,8 @@ export const AddTransaction = () => {
     const onSubmit=(e)=>{
         e.preventDefault();
         let newtransaction={id:Math.floor(Math.random()*100000000000),description:item,price:+price}
-        addNewTransaction(newtransaction)
+        if (item!=='' && newtransaction.price>0){
+        addNewTransaction(newtransaction)}
 	 setItem('')
 	 setPrice('')
 
